@@ -1,0 +1,37 @@
+.chatMain
+  .mainHeader
+    .mainHeader__leftBox
+      %h2.mainHeader__leftBox__currentGroup
+        test
+      %ul.mainHeader__leftBox__memberList
+        member:
+        %li.mainHeader__leftBox__memberList__member
+          name
+    = link_to "#" do
+      .mainHeader__editBtn
+        Edit
+  .messages
+    .message
+      .message__upperInfo
+        %p.message__upperInfo__talker
+          name
+        %p.message__upperInfo__date
+          2020/04/12(Sun) 09:52:49
+      %p.message__text
+        testtesttesttest
+    .message
+      .message__upperInfo
+        %p.message__upperInfo__talker
+          name
+        %p.message__upperInfo__date
+          2020/04/12(Sun) 09:52:49
+      %p.message__text
+        testtesttesttest
+  .form
+    %form.newMessage
+      .inputBox
+        %input{type: "text", class: "inputBox__text", placeholder: "type a message"}
+        %label{class: "inputBox__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "inputBox__image__file"}
+      %input{type: "submit", value: "Send", class: "submitBtn"}
