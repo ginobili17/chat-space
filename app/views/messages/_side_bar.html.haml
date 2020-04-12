@@ -1,0 +1,25 @@
+.sideBar
+  .sideHeader
+    .sideHeader__topItem
+      %p.sideHeader__topItem__name
+        name
+      %ul.sideHeader__topItem__menu
+        %li.sideHeader__topItem__editUser
+          = link_to "#", class: "btnEditUser" do
+            =icon('fas', 'edit')
+        %li.sideHeader__topItem__newGroup
+          = link_to "#", class: "btnNewGroup"do
+            =icon('fas', 'cog')
+  .groups
+    = link_to "#" do
+      .group
+        %p.group__groupName
+          test
+        %p.group__latestMessage
+          まだメッセージはありません。
+    = link_to "#" do
+      .group
+        %p.group__groupName
+          test 2
+        %p.group__latestMessage
+          まだメッセージはありません。
