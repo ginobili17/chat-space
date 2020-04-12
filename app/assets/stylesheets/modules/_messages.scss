@@ -25,7 +25,7 @@
       line-height: 20px;
 
       &__name {
-        color: #ffffff;
+        color: $sideTextColor;
         font-weight: bold;
       }
 
@@ -34,11 +34,11 @@
 
         .btnEditUser {
           padding-right: 5px;
-          color: #ffffff;
+          color: $sideTextColor;
         }
 
         .btnNewGroup {
-          color: #ffffff;
+          color: $sideTextColor;
         }
       }
     }
@@ -89,7 +89,7 @@
       &__memberList {
         display: flex;
         font-size: 12px;
-        color: #999999;
+        color: $subTextColor;
       }
     }
 
@@ -127,7 +127,7 @@
         }
 
         &__date {
-          color: #999999;
+          color: $subTextColor;
           font-size: 12px;
           margin-left: 10px;
         }
