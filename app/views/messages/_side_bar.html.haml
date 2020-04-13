@@ -2,13 +2,13 @@
   .sideHeader
     .sideHeader__topItem
       %p.sideHeader__topItem__name
-        name
+        = current_user.name
       %ul.sideHeader__topItem__menu
         %li.sideHeader__topItem__editUser
           = link_to "#", class: "btnEditUser" do
-            =icon('fas', 'edit')
+            =icon('far', 'edit')
         %li.sideHeader__topItem__newGroup
-          = link_to "#", class: "btnNewGroup"do
+          = link_to edit_user_path(current_user), class: "btnNewGroup"do
             =icon('fas', 'cog')
   .groups
     = link_to "#" do
