@@ -4,22 +4,17 @@
       %p.sideHeader__topItem__name
         = current_user.name
       %ul.sideHeader__topItem__menu
-        %li.sideHeader__topItem__editUser
-          = link_to "#", class: "btnEditUser" do
-            =icon('far', 'edit')
         %li.sideHeader__topItem__newGroup
-          = link_to edit_user_path(current_user), class: "btnNewGroup"do
+          = link_to new_group_path, class: "btnNewGroup" do
+            =icon('far', 'edit')
+        %li.sideHeader__topItem__editUser
+          = link_to edit_user_path(current_user), class: "btnEditUser"do
             =icon('fas', 'cog')
   .groups
-    = link_to "#" do
+    - current_user.groups.each do |group|
       .group
-        %p.group__groupName
-          test
-        %p.group__latestMessage
-          まだメッセージはありません。
-    = link_to "#" do
-      .group
-        %p.group__groupName
-          test 2
-        %p.group__latestMessage
-          まだメッセージはありません。
+        = link_to "#" do
+          %p.group__groupName
+            = group.name
+          %p.group__latestMessage
+            まだメッセージはありません。
