@@ -113,9 +113,11 @@
     background-color: $messagesColor;
     height: calc(100vh - 100px - 90px);
     padding: 46px 40px;
+    overflow: scroll;
 
     .message {
       padding-bottom: 40px;
+
       
       .upperMessage {
         display: flex;
