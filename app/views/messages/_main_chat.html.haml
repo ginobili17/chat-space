@@ -2,36 +2,26 @@
   .mainHeader
     .mainHeader__leftBox
       %h2.mainHeader__leftBox__currentGroup
-        test
+        = @group.name
       %ul.mainHeader__leftBox__memberList
         member:
         %li.mainHeader__leftBox__memberList__member
-          name
-    = link_to "#" do
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
+    = link_to edit_group_path(@group) do
       .mainHeader__editBtn
         Edit
+
   .messages
-    .message
-      .message__upperInfo
-        %p.message__upperInfo__talker
-          name
-        %p.message__upperInfo__date
-          2020/04/12(Sun) 09:52:49
-      %p.message__text
-        testtesttesttest
-    .message
-      .message__upperInfo
-        %p.message__upperInfo__talker
-          name
-        %p.message__upperInfo__date
-          2020/04/12(Sun) 09:52:49
-      %p.message__text
-        testtesttesttest
+    = render @messages
+
   .form
-    %form.newMessage
+    .newMessage
       .inputBox
-        %input{type: "text", class: "inputBox__text", placeholder: "type a message"}
-        %label{class: "inputBox__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "inputBox__image__file"}
-      %input{type: "submit", value: "Send", class: "submitBtn"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'inputBox__text', placeholder: 'type a message'
+          .inputBox__mask
+            = f.label :image, class: 'inputBox__mask__image' do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'inputBox__mask__image__file'
+          = f.submit 'Send', class: 'submitBtn'      
